@@ -19,11 +19,11 @@ export interface User extends Document {
   isVerified:boolean;
   verifyCodeExpiry: Date;
   isAcceptingMessages: boolean;
-}
+}``
 
 const UserSchema: Schema<User> = new Schema({
   username: { type: String, required: true ,trim:true,unique: true},
-  email: { type: String, required: true,unique:true, trim: true,match: [/.+\@.+\..+/ ,"please enter a valid email"]},
+  email: { type: String, required: true,unique:tru, trim: true,match: [/.+\@.+\..+/ ,"please enter a valid email"]},
   password: { type: String, required:[true,"please enter your password"] },
   messages: [MessageSchema],
     isVerified: { type: Boolean, default: false },
